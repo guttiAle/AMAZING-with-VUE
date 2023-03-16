@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Events | Stats</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg bg-dark" id="caja-nav-principal">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand ms-5" href="#"><img src="./assets/images/Logo-Amazing-Events.png" style="height: 5.5vh;" alt="iamgen"></a>
+            <div class="collapse navbar-collapse d-flex justify-content-around me-5" id="navbarNav" style="max-width: 33vw !important;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./upcomingEvents.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./pastEvents.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light"  href="#">Stats</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- MAIN -->
+    <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh; width: 100%; background: linear-gradient(180deg, rgb(201, 163, 189) 0%, rgb(78, 58, 72) 100%);">
+        <div class="col-sm-8 col-12 p-4" id="appStats"> 
+            <table class="table table-bordered" id="table-1">
+                <tr>
+                    <th colspan="3" class="fs-4 text">Events statistics</th>
+                </tr>
+                <tr>
+                    <th class="col-4">Events with the highest percentage of attendance</th>
+                    <th class="col-4">Events with the lowest percentage of attendance</th>
+                    <th>Events with larger capacity</th>
+                </tr>
+                <tr>
+                    <td v-for="evento of listaPrimerTabla"> {{evento}} </td>
+                </tr>
+            </table>
+            <table class="table table-bordered">
+                <tr>
+                    <th colspan="3" class="fs-4 text col-4">Upcoming events statistics by category</th>
+                </tr>
+                <tr>
+                    <th class="col-4">Categories</th>
+                    <th class="col-4">Revenues</th>
+                    <th>Percentage of attendance</th>
+                </tr>
+                <tr v-for="evento of listaSegundaTabla">
+                    <td>{{evento.nombre}}</td>
+                    <td>$ {{evento.ganancia}}</td>
+                    <td>{{evento.asistencia}}%</td>
+                </tr>   
+            </table>
+            <table class="table table-bordered">
+                <tr>
+                    <th colspan="3" class="fs-4 text col-4">Past events statistics by category</th>
+                </tr>
+                <tr>
+                    <th class="col-4">Categories</th>
+                    <th class="col-4">Revenues</th>
+                    <th>Percentage of attendance</th>
+                </tr>
+                <tr v-for="evento of listaTercerTabla">
+                    <td>{{evento.nombre}}</td>
+                    <td>$ {{evento.ganancia}}</td>
+                    <td>{{evento.asistencia}}%</td>
+                </tr>   
+            </table>
+
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer-caja bg-dark d-flex align-items-center justify-content-between flex-wrap col-12" style="min-height: 10vh;">
+        <div class="redes ms-5 d-flex justify-content-between align-items-center" style="width: 25vh; height: 8vh;">
+            <a href="https://www.instagram.com/"><img src="./assets/images/instagram.png" style="height: 5vh;" alt=""></a>
+            <a href="https://web.whatsapp.com/"><img src="https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/10/whatsapp-logo-png-white.png?fit=512%2C512&ssl=1" style="height: 5vh;" alt=""></a>
+            <a href="https://www.facebook.com/"><img src="./assets/images/logoFb.png" style="height: 5vh;" alt=""></a>
+        </div> 
+        <h4 class="text-secondary-emphasis me-5">COHORT 44/45</h4>
+    </footer>
+
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="./message.js"></script>
+    <script src="./stats.js"></script>
+</body>
+</html>
